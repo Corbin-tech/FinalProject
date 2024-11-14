@@ -87,6 +87,7 @@ postTax = preTax - (stateTax + federalTax)
 
 #print the results
 
+print("---Payroll Information---")
 print("Employee Name:", employeeName)
 print("Gross Pay: $", grossPay)
 print("Dependent Reduction: $", dependentReduction)
