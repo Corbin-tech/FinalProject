@@ -18,7 +18,7 @@ connection.execute(command1)
 #initialize variables
 
 employeeID, employeeDependents, dependentReduction = 0, 0, 0
-employeeHourlyRate, grossPay, preTax, stateTax, federalTax, postTax, hoursOverForty, overtimeHours, employeeTotalHours = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+employeeHourlyRate, grossPay, preTax, stateTax, federalTax, postTax, hoursOverForty, overtimeHours, employeeTotalHours = 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
 employeeName = ""
 
 #insert data into table
