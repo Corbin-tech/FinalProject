@@ -36,7 +36,7 @@ Please enter the number of your dependents: 2
 Please enter the total hours worked this week: 45
 
 --- Payroll Information ---
-Employee Name: John Doe
+Employee Name: John Smith
 Gross Pay: $2050.75
 Dependent Reduction: $50.00
 State Taxes: $111.84
