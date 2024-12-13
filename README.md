@@ -22,7 +22,7 @@ Outputs all of the payroll information, including gross pay, taxes, and take-hom
 **Setup**
 
 
-Make sure Python 3, the sqlite3 library, and tabulate are installed on your device.
+Make sure Python 3, the sqlite3 library, and tabulate python library are installed on your device. To install tabulate on your CLI run: pip install tabulate
 
 Run the Python script (employeePayroll.py). The database employeePayroll.db will be created if it doesn't already exist.
 
