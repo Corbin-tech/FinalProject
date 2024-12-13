@@ -49,11 +49,25 @@ if cursor.fetchone()[0] == 0:
     cursor.executemany("INSERT INTO employeePayroll VALUES (?, ?)", employeePayroll)
     connection.commit()
 
-#gather the required information
+#gather the initial required information
 
-employeeName = str(input("Please enter your first and last name: "))
-print("Valid employee IDs range from 1-16")
-employeeID = int(input("Please enter your employee ID: "))
+while True:
+    employeeName = input("Please enter your first and last name: ")
+    if employeeName != "":
+        print("Invalid input. Please enter a valid name.")
+    else:
+        break
+
+print("Valid employee IDs range from 1-16") #let user know how many employee IDs exist
+
+while True:
+    try:
+        employeeID = int(input("Please enter your employee ID: "))
+        if 1 <= employeeID <= 16:
+            break
+        print("Invalid ID. Please enter a number between 1 and 16.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
 #query the table using the employee ID to get the employee's hourly rate
 
@@ -68,8 +82,23 @@ else:
 
 #gather the additional required information
 
-employeeDependents = int(input("Please enter the number of your dependents: "))
-employeeTotalHours = float(input("Please enter the total hours worked this week: "))
+while True:
+    try:
+        employeeDependents = int(input("Please enter the number of your dependents: "))
+        if employeeDependents >= 0:
+            break
+        print("Invalid input. Number of dependents cannot be negative.")
+    except ValueError:
+        print("Invalid input. Please enter a valid whole number.")
+
+while True:
+    try:
+        employeeTotalHours = float(input("Please enter the total hours worked this week: "))
+        if 0 < employeeTotalHours <= 168:  ## 168 is the max amount of hours in a week
+            break
+        print("Invalid input. Hours must be between 0 and 168.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
 #logic to calculate pay
 
