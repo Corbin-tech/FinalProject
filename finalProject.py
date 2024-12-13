@@ -52,13 +52,12 @@ if cursor.fetchone()[0] == 0:
 #gather the initial required information
 
 while True:
-    employeeName = input("Please enter your first and last name: ")
-    if employeeName != "":
-        print("Invalid input. Please enter a valid name.")
-    else:
+    employeeName = input("Please enter your first and last name: ").strip()
+    if employeeName and all(c.isalpha() or c.isspace() for c in employeeName): #is alpha checks to make sure the name contains only letters, is space allows spaces
         break
+    print("Invalid input. Name can only contain letters and spaces and cannot be left empty.")
 
-print("Valid employee IDs range from 1-16") #let user know how many employee IDs exist
+print("Valid employee IDs range from 1-16") ##let user know how many employee IDs exist
 
 while True:
     try:
@@ -113,6 +112,14 @@ preTax = grossPay - dependentReduction
 stateTax = ((preTax * 1.056) - preTax) #where the state tax rate is 5.6%
 federalTax = ((preTax * 1.079) - preTax) #where the federal tax rate is 7.9%
 postTax = preTax - (stateTax + federalTax)
+
+#make sure that the Final Payroll Info is rouned to two decimal places
+
+grossPay = round(grossPay, 2)
+dependentReduction = round(dependentReduction, 2)
+stateTax = round(stateTax, 2)
+federalTax = round(federalTax, 2)
+postTax = round(postTax, 2)
 
 #print the results
 
