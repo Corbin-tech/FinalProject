@@ -1,4 +1,6 @@
 import sqlite3
+from tabulate import tabulate
+
 dbname = "employeePayroll.db"
 
 #define connection
@@ -113,7 +115,7 @@ stateTax = ((preTax * 1.056) - preTax) #where the state tax rate is 5.6%
 federalTax = ((preTax * 1.079) - preTax) #where the federal tax rate is 7.9%
 postTax = preTax - (stateTax + federalTax)
 
-#make sure that the Final Payroll Info is rouned to two decimal places
+#make sure that the Final Payroll information is rouned to two decimal places
 
 grossPay = round(grossPay, 2)
 dependentReduction = round(dependentReduction, 2)
@@ -121,15 +123,18 @@ stateTax = round(stateTax, 2)
 federalTax = round(federalTax, 2)
 postTax = round(postTax, 2)
 
+#create a table to display the results
+
+payrollTable = [["Employee Name", employeeName],
+         ["Gross Pay", "$" + str(grossPay)],
+         ["Dependent Reduction", "$" + str(dependentReduction)],
+         ["State Taxes", "$" + str(stateTax)],
+         ["Federal Taxes", "$" + str(federalTax)],
+         ["Take Home Pay", "$" + str(postTax)]]
+
 #print the results
 
-print("---Payroll Information---")
-print("Employee Name:", employeeName)
-print("Gross Pay: $", grossPay)
-print("Dependent Reduction: $", dependentReduction)
-print("State Taxes: $", stateTax)
-print("Federal Taxes: $", federalTax)
-print("Take Home Pay: $", postTax)
+print(tabulate(payrollTable, headers="firstrow", tablefmt="fancy_grid"))
 
 #close the connection
 
