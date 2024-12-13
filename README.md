@@ -35,17 +35,16 @@ Please enter your employee ID: 5
 Please enter the number of your dependents: 2
 Please enter the total hours worked this week: 45
 
-╒═════════════════════╤══════════════╕
 │ Employee Name       │ John Smith   │
-╞═════════════════════╪══════════════╡
+
 │ Gross Pay           │ $2170.75     │
-├─────────────────────┼──────────────┤
+
 │ Dependent Reduction │ $50          │
-├─────────────────────┼──────────────┤
+
 │ State Taxes         │ $118.76      │
-├─────────────────────┼──────────────┤
+
 │ Federal Taxes       │ $167.54      │
-├─────────────────────┼──────────────┤
+
 │ Take Home Pay       │ $1834.45     │
-╘═════════════════════╧══════════════╛
+
 
